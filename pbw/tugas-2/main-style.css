@@ -1,7 +1,16 @@
 @keyframes throw-right {
     0% { transform: translate(0, 0) rotate(0deg); }
     50% { transform: translate(400px, -100px) rotate(180deg); }
-    100% { transform: translate(730px, 0) rotate(360deg); }
+    100% { transform: translate(830px, 0) rotate(360deg); }
+}
+
+@keyframes projectile-right {
+    0% { transform: translate(0,0) rotate(0deg); }
+    100% { transform: translate(1100px,0) rotate(0deg); }
+}
+
+.projectile-right {
+    animation: projectile-right 0.3s linear;
 }
 
 .throw-right {
@@ -37,13 +46,19 @@
 body {
     padding: 1cm 1cm 1cm 1cm;
     overflow: auto;
+    background-image: url("./imgs/bg.png");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Games', sans-serif;
 }
 
 button {
     width: 200px;
     height: 30px;
-    background-color: #3498db;
-    color: white;
+    background-color: #B4EBE6;
+    color: black;
     font-size: 16px;
     border: none;
     cursor: pointer;
@@ -56,6 +71,7 @@ button {
     align-items: center;
     width: 100%;
     height: 30px;
+    background-color: #eeeeee41;
 }
 
 .options {
@@ -71,18 +87,19 @@ button {
 .health-bar {
     width: 500px;
     height: 100%;
-    background-color: #EEEEEE;
+    color: black;
+    background-color: #eeeeee41;
     border: 5px solid black;
 }
 
 #kingsud-health {
-    background-color: red;
+    background-color: #16C47F;
     width: 500px;
     height: 100%;
 }
 
 #npc-health {
-    background-color: blue;
+    background-color: #16C47F;
     text-align: right;
     width: 500px;
     height: 100%;
@@ -132,14 +149,31 @@ button {
 }
 
 .weapon {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 250px;
 }
 
-#kingsud-weapon {
+.projectile {
+    height: 50px;
+    width: 200px;
+}
+
+#kingsud-sword {
     position: absolute;
-    left: 280px;
+    left: 350px;
     top: 150px;
+}
+
+#kingsud-bow {
+    position: absolute;
+    left: 50px;
+    top: 150px;
+}
+
+#kingsud-arrow {
+    position: absolute;
+    left: 50px;
+    top: 250px;
 }
 
 #ops-weapon {
