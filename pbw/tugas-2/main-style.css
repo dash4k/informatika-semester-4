@@ -65,6 +65,14 @@ button {
     border: 3px solid black;
 }
 
+audio {
+    position: absolute;
+    left: 400px;
+    width: 20px;
+    height: 30px;
+    overflow: hidden;
+}
+
 .health-container {
     display: flex;
     justify-content: space-between;
