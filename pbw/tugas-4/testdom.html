@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="view.php">
+        <div id="inputsContainer">
+            <input type="text" name="test[]" id="test1">
+            <select name="option[]" id="option1">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+                <option value="5">Option 5</option>
+            </select>
+            <input type="checkbox" name="checkbox[]" id="checkbox1">
+            <label for="checkbox1">Checkbox</label>
+            <button id="addButton1">+</button>
+            <button id="removeButton1">-</button>
+        </div>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('form');
+    const inputsContainer = document.getElementById('inputsContainer');
+
+    function createInputsBlock() {
+        const newBlock = inputsContainer.cloneNode(true);
+
+        newBlock.querySelector('input[type="text"]').value = '';
+        newBlock.querySelector('select').selectedIndex = 0;
+        newBlock.querySelector('input[type="checkbox"]').checked = false;
+
+        const addBtn = newBlock.querySelector('#addButton1');
+        const removeBtn = newBlock.querySelector('#removeButton1');
+
+        addBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            form.insertBefore(createInputsBlock(), form.querySelector('button[type="submit"]'));
+        });
+
+        removeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (form.querySelectorAll('#inputsContainer').length > 1) {
+                newBlock.remove();
+            }
+        });
+
+        return newBlock;
+    }
+
+    const addBtn = document.getElementById('addButton1');
+    const removeBtn = document.getElementById('removeButton1');
+
+    addBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        form.insertBefore(createInputsBlock(), form.querySelector('button[type="submit"]'));
+    });
+
+    removeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (form.querySelectorAll('#inputsContainer').length > 1) {
+            newBlock.remove();
+        }
+    });
+});
+</script>
+</html>
