@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_GET['test']) && isset($_GET['option']) && isset($_GET['checkbox'])) {
+if (isset($_GET['test']) || isset($_GET['option']) || isset($_GET['checkbox'])) {
     $test = $_GET['test'];
     $option = $_GET['option'];
     $checkboxes = $_GET['checkboxes'];

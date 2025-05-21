@@ -1,18 +1,5 @@
 import numpy as np
-
-
-ID_STOPWORDS = {
-    "yang", "untuk", "dengan", "pada", "tidak", "dari", "ini", "di", "ke", "dan",
-    "adalah", "itu", "saya", "kamu", "dia", "kita", "mereka", "akan", "apa", "bisa",
-    "karena", "jadi", "jika", "agar", "dalam", "ada", "sudah", "belum", "lagi", "harus",
-    "sangat", "banyak", "semua", "hanya", "saja", "mau", "boleh", "begitu", "lebih",
-    "kurang", "seperti", "masih", "namun", "tetapi", "bukan", "bila", "oleh", "setelah",
-    "sebelum", "kami", "aku", "engkau", "dirinya", "sendiri", "antar", "antara",
-    "sehingga", "berupa", "terhadap", "pula", "tetap", "baik", "sambil", "tersebut",
-    "selama", "seluruh", "bagai", "sekali", "supaya", "dapat", "bahwa", "kapan", "sebab",
-    "sedang", "terjadi", "mungkin", "saat", "menjadi", "apakah", "dimana", "kemana"
-}
-
+import random
 
 def load_data():
     emotions = [ 'Anger', 'Fear', 'Joy', 'Love', 'Neutral', 'Sad']
@@ -39,6 +26,17 @@ def clean_text(text: str):
 
 
 def preprocess(text: str):
+    ID_STOPWORDS = {
+        "yang", "untuk", "dengan", "pada", "tidak", "dari", "ini", "di", "ke", "dan",
+        "adalah", "itu", "saya", "kamu", "dia", "kita", "mereka", "akan", "apa", "bisa",
+        "karena", "jadi", "jika", "agar", "dalam", "ada", "sudah", "belum", "lagi", "harus",
+        "sangat", "banyak", "semua", "hanya", "saja", "mau", "boleh", "begitu", "lebih",
+        "kurang", "seperti", "masih", "namun", "tetapi", "bukan", "bila", "oleh", "setelah",
+        "sebelum", "kami", "aku", "engkau", "dirinya", "sendiri", "antar", "antara",
+        "sehingga", "berupa", "terhadap", "pula", "tetap", "baik", "sambil", "tersebut",
+        "selama", "seluruh", "bagai", "sekali", "supaya", "dapat", "bahwa", "kapan", "sebab",
+        "sedang", "terjadi", "mungkin", "saat", "menjadi", "apakah", "dimana", "kemana"
+    }
     tokens = text.split()
     tokens = [word for word in tokens if word not in ID_STOPWORDS]
     return tokens
@@ -79,6 +77,13 @@ def vectorize_tfidf(tokens, word2idx, idf):
     return vec
 
 
+def confusion_matrix_np(y_true, y_pred, num_classes):
+    cm = np.zeros((num_classes, num_classes), dtype=int)
+    for t, p in zip(y_true, y_pred):
+        cm[t][p] += 1
+    return cm
+
+
 class LinearSVM:
     def __init__(self, num_features, lr=0.1, C=1, epochs=10):
         self.w = np.zeros(num_features)
@@ -115,47 +120,85 @@ class OneVSRestSVM:
         scores = np.array([np.dot(X, model.w) + model.b for model in self.models])
         return np.argmax(scores, axis=0)
     
-import random
 
-# Load and preprocess the data
-texts, labels = load_data()
-texts = [clean_text(t) for t in texts]
-tokens_list = [preprocess(t) for t in texts]
+def k_fold_split(X, y, k=5, seed=42):
+    data = list(zip(X, y))
+    random.Random(seed).shuffle(data)
+    fold_size = len(data) // k
+    folds = []
 
-# Encode labels
-unique_labels = sorted(set(labels))
-label2idx = {label: idx for idx, label in enumerate(unique_labels)}
-y_encoded = np.array([label2idx[label] for label in labels])
+    for i in range(k):
+        test_data = data[i*fold_size:(i+1)*fold_size]
+        train_data = data[:i*fold_size] + data[(i+1)*fold_size:]
+        X_train, y_train = zip(*train_data)
+        X_test, y_test = zip(*test_data)
+        folds.append((np.array(X_train), np.array(y_train), np.array(X_test), np.array(y_test)))
 
-# Build vocab and compute IDF
-vocab, word2idx = build_vocab(tokens_list)
-idf = compute_idf(tokens_list, word2idx)
+    return folds
 
-# Convert texts to TF-IDF vectors
-X = np.array([vectorize_tfidf(tokens, word2idx, idf) for tokens in tokens_list])
-y = y_encoded
 
-# Shuffle and split (80/20)
-data = list(zip(X, y))
-random.seed(42)
-random.shuffle(data)
-split_idx = int(0.8 * len(data))
-train_data, test_data = data[:split_idx], data[split_idx:]
+def cross_validate(X, y, num_classes, num_features, k=5, lr=0.01, C=1.0, epochs=50):
+    folds = k_fold_split(X, y, k)
+    acc_scores = []
 
-X_train, y_train = zip(*train_data)
-X_test, y_test = zip(*test_data)
-X_train, y_train = np.array(X_train), np.array(y_train)
-X_test, y_test = np.array(X_test), np.array(y_test)
+    for fold_idx, (X_train, y_train, X_val, y_val) in enumerate(folds):
+        print(f"Fold {fold_idx+1}/{k}")
+        model = OneVSRestSVM(num_classes, num_features, lr=lr, C=C, epochs=epochs)
+        model.fit(X_train, y_train)
+        preds = model.predict(X_val)
+        acc = np.mean(preds == y_val)
+        acc_scores.append(acc)
+        print(f"Accuracy: {acc * 100:.2f}%")
 
-# Train the model
-num_classes = len(unique_labels)
-num_features = X.shape[1]
-model = OneVSRestSVM(num_classes, num_features, lr=0.01, C=0.5, epochs=100)
-model.fit(X_train, y_train)
+    return np.mean(acc_scores)
 
-# Predict on test set
-predictions = model.predict(X_test)
 
-# Compute accuracy
-accuracy = np.mean(predictions == y_test)
-print(f"Accuracy: {accuracy * 100:.2f}%")
+def grid_search(X, y, num_classes, num_features, k=5):
+    lr_values = [0.01, 0.05, 0.1]
+    C_values = [0.1, 0.5, 1]
+    epoch_values = [50]
+
+    best_score = 0
+    best_params = {}
+
+    for lr in lr_values:
+        for C in C_values:
+            for epochs in epoch_values:
+                print(f"\nTrying params: lr={lr}, C={C}, epochs={epochs}")
+                score = cross_validate(X, y, num_classes, num_features, k, lr, C, epochs)
+                print(f"Average Accuracy: {score * 100:.2f}%")
+
+                if score > best_score:
+                    best_score = score
+                    best_params = {'lr': lr, 'C': C, 'epochs': epochs}
+
+    print(f"\nBest Params: {best_params}, Best Accuracy: {best_score * 100:.2f}%")
+    return best_params
+
+
+def evaluate_model(y_true, y_pred, num_classes, label_names):
+    cm = confusion_matrix_np(y_true, y_pred, num_classes)
+
+    precision = []
+    recall = []
+    f1 = []
+
+    for i in range(num_classes):
+        tp = cm[i, i]
+        fp = cm[:, i].sum() - tp
+        fn = cm[i, :].sum() - tp
+
+        prec = tp / (tp + fp) if (tp + fp) > 0 else 0
+        rec = tp / (tp + fn) if (tp + fn) > 0 else 0
+        f1_score = 2 * prec * rec / (prec + rec) if (prec + rec) > 0 else 0
+
+        precision.append(prec)
+        recall.append(rec)
+        f1.append(f1_score)
+
+        print(f"{label_names[i]} -> Precision: {prec:.2f}, Recall: {rec:.2f}, F1: {f1_score:.2f}")
+
+    overall_acc = np.mean(np.array(y_pred) == np.array(y_true))
+    print(f"\nOverall Accuracy: {overall_acc * 100:.2f}%")
+    
+    return cm, precision, recall, f1

@@ -105,20 +105,33 @@ class OneVsRestSVM:
             model.fit(X, binary_y)
 
     def predict(self, X):
-        scores = np.array([np.dot(X, model.w) + model.b for model in self.models])
+        scores = np.stack([model.w @ X.T + model.b for model in self.models])
         return np.argmax(scores, axis=0)
+
+    
+random.seed(42)
+np.random.seed(42)
 
 # --- Stratified Train/Test Split ---
 def stratified_split(X, y, test_size=0.2):
+    X = np.array(X)
+    y = np.array(y)
     classes = np.unique(y)
     train_idx, test_idx = [], []
+
     for c in classes:
-        idx = np.where(y == c)[0].tolist()
-        random.shuffle(idx)
+        idx = np.where(y == c)[0]
+        np.random.shuffle(idx)
         split = int(len(idx) * (1 - test_size))
-        train_idx += idx[:split]
-        test_idx += idx[split:]
+        train_idx.extend(idx[:split])
+        test_idx.extend(idx[split:])
+
+    # Convert final indices to NumPy arrays to ensure proper indexing
+    train_idx = np.array(train_idx)
+    test_idx = np.array(test_idx)
+
     return X[train_idx], X[test_idx], y[train_idx], y[test_idx]
+
 
 # --- Manual K-Fold ---
 def manual_k_fold_split(X, y, k=5):
@@ -158,10 +171,20 @@ print(tokenized)
 print(vocab)
 
 # --- Hyperparameter Tuning ---
-param_grid = [(lr, C, ep) for lr in [0.1, 0.01] for C in [1, 0.1] for ep in [5, 100]]
+# param_grid = [(lr, C, ep) for lr in [0.1, 0.01] for C in [1, 0.1] for ep in [5, 100]]
+param_grid = [(lr, C, ep) for lr in [0.01] for C in [1] for ep in [5]]
 best_acc = 0
 best_params = None
 folds = manual_k_fold_split(X_trainval, y_trainval, k=5)
+
+from collections import Counter
+
+# Original labels
+print("Original label counts:", Counter(labels))
+
+# Encoded labels
+print("Encoded label counts:", Counter(y))
+print("Emotion to index mapping:", emotion2idx)
 
 print("\nStarting hyperparameter tuning...")
 for lr, C, epochs in tqdm(param_grid, desc="Param Combos"):
