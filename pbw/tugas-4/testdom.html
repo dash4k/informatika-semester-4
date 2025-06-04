@@ -7,28 +7,29 @@
 </head>
 <body>
     <form action="view.php">
-        <div id="inputsContainer">
-            <input type="text" name="test[]" id="test1">
-            <select name="option[]" id="option1">
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-                <option value="4">Option 4</option>
-                <option value="5">Option 5</option>
-            </select>
-            <input type="checkbox" name="checkbox[]" id="checkbox1">
-            <label for="checkbox1">Checkbox</label>
-            <button id="addButton1">+</button>
-            <button id="removeButton1">-</button>
-        </div>
+    <div class="inputsContainer">
+        <input type="text" name="test[]" class="textInput">
+        <select name="option[]" class="selectInput">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+            <option value="4">Option 4</option>
+            <option value="5">Option 5</option>
+        </select>
+        <input type="checkbox" name="checkbox[]" class="checkboxInput">
+        <label>Checkbox</label>
+        <button class="addButton">+</button>
+        <button class="removeButton">-</button>
+    </div>
         <button type="submit">Submit</button>
         <button type="reset">Reset</button>
     </form>
 </body>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+    reindexInputs();
     const form = document.querySelector('form');
-    const inputsContainer = document.getElementById('inputsContainer');
+    const inputsContainer = document.querySelector('.inputsContainer');
 
     function createInputsBlock() {
         const newBlock = inputsContainer.cloneNode(true);
@@ -37,38 +38,52 @@
         newBlock.querySelector('select').selectedIndex = 0;
         newBlock.querySelector('input[type="checkbox"]').checked = false;
 
-        const addBtn = newBlock.querySelector('#addButton1');
-        const removeBtn = newBlock.querySelector('#removeButton1');
+        const addBtn = newBlock.querySelector('.addButton');
+        const removeBtn = newBlock.querySelector('.removeButton');
 
-        addBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            form.insertBefore(createInputsBlock(), form.querySelector('button[type="submit"]'));
-        });
-
-        removeBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (form.querySelectorAll('#inputsContainer').length > 1) {
-                newBlock.remove();
-            }
-        });
+        addBtn.addEventListener('click', handleAdd);
+        removeBtn.addEventListener('click', handleRemove);
 
         return newBlock;
     }
 
-    const addBtn = document.getElementById('addButton1');
-    const removeBtn = document.getElementById('removeButton1');
+    function reindexInputs() {
+        document.querySelectorAll('.inputsContainer').forEach((block, index) => {
+        const textInput = block.querySelector('input[type="text"]');
+            const selectInput = block.querySelector('select');
+            const checkbox = block.querySelector('input[type="checkbox"]');
+            const label = block.querySelector('label');
 
-    addBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        form.insertBefore(createInputsBlock(), form.querySelector('button[type="submit"]'));
-    });
+            textInput.name = `test[${index}]`;
+            selectInput.name = `option[${index}]`;
+            checkbox.name = `checkboxes[${index}]`;
+            checkbox.id = `checkboxes_${index}`;
+            label.htmlFor = `checkboxes_${index}`;
+        });
+    }
 
-    removeBtn.addEventListener('click', (e) => {
+    function handleAdd(e) {
         e.preventDefault();
-        if (form.querySelectorAll('#inputsContainer').length > 1) {
-            newBlock.remove();
+        const allBlocks = document.querySelectorAll('.inputsContainer');
+        const newBlock = createInputsBlock(allBlocks.length);
+        form.insertBefore(newBlock, form.querySelector('button[type="submit"]'));
+        reindexInputs();
+    }
+
+    function handleRemove(e) {
+        e.preventDefault();
+        const blockToRemove = e.target.closest('.inputsContainer');
+        if (document.querySelectorAll('.inputsContainer').length > 1) {
+            blockToRemove.remove();
+            reindexInputs();
         }
-    });
+    }
+
+    const addBtn = document.querySelector('.addButton');
+    const removeBtn = document.querySelector('.removeButton');
+
+    addBtn.addEventListener('click', handleAdd);
+    removeBtn.addEventListener('click', handleRemove);
 });
 </script>
 </html>
