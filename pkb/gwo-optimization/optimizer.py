@@ -1,7 +1,7 @@
 import matplotlib.animation as animation
 import os
 from gwo import GWO, Logger
-from utils import Spinner, func
+from utils import Spinner
 import matplotlib.pyplot as plt
 import numpy as np
 from functions import functions

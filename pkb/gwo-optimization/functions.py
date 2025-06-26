@@ -1,5 +1,4 @@
 import numpy as np
-from utils import func
 
 def sphere(x):
     return np.sum(x**2)
@@ -54,6 +53,13 @@ def penalized_1(x):
             return 0
     term2 = np.sum([u_fun(xi) for xi in x])
     return term1 + term2
+
+
+class func:
+    def __init__(self, func, lower_bound, upper_bound):
+        self.func  = func
+        self.lower_bound = lower_bound
+        self.upper_bound = upper_bound
 
 
 functions = {
