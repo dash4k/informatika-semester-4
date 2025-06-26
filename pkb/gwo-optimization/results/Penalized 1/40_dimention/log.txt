@@ -1,0 +1,111 @@
+Optimization Log
+Iteration 0, Best Fitness: 727667805.832564
+Iteration 1, Best Fitness: 622774947.968918
+Iteration 2, Best Fitness: 159640599.991736
+Iteration 3, Best Fitness: 159640599.991736
+Iteration 4, Best Fitness: 105585051.940805
+Iteration 5, Best Fitness: 61958772.574318
+Iteration 6, Best Fitness: 37664368.359416
+Iteration 7, Best Fitness: 24573812.723892
+Iteration 8, Best Fitness: 10109598.369174
+Iteration 9, Best Fitness: 10109598.369174
+Iteration 10, Best Fitness: 6014819.084739
+Iteration 11, Best Fitness: 1932901.330422
+Iteration 12, Best Fitness: 755209.122121
+Iteration 13, Best Fitness: 93360.936973
+Iteration 14, Best Fitness: 26542.919330
+Iteration 15, Best Fitness: 6831.743362
+Iteration 16, Best Fitness: 179.289782
+Iteration 17, Best Fitness: 37.418009
+Iteration 18, Best Fitness: 16.198369
+Iteration 19, Best Fitness: 13.576302
+Iteration 20, Best Fitness: 10.575050
+Iteration 21, Best Fitness: 10.575050
+Iteration 22, Best Fitness: 7.932087
+Iteration 23, Best Fitness: 5.722814
+Iteration 24, Best Fitness: 4.736286
+Iteration 25, Best Fitness: 2.572462
+Iteration 26, Best Fitness: 1.934425
+Iteration 27, Best Fitness: 1.830738
+Iteration 28, Best Fitness: 1.050339
+Iteration 29, Best Fitness: 0.939911
+Iteration 30, Best Fitness: 0.795113
+Iteration 31, Best Fitness: 0.737974
+Iteration 32, Best Fitness: 0.600541
+Iteration 33, Best Fitness: 0.509441
+Iteration 34, Best Fitness: 0.509441
+Iteration 35, Best Fitness: 0.465145
+Iteration 36, Best Fitness: 0.404069
+Iteration 37, Best Fitness: 0.404069
+Iteration 38, Best Fitness: 0.364867
+Iteration 39, Best Fitness: 0.364867
+Iteration 40, Best Fitness: 0.350392
+Iteration 41, Best Fitness: 0.315962
+Iteration 42, Best Fitness: 0.302189
+Iteration 43, Best Fitness: 0.281225
+Iteration 44, Best Fitness: 0.271598
+Iteration 45, Best Fitness: 0.269582
+Iteration 46, Best Fitness: 0.256454
+Iteration 47, Best Fitness: 0.256454
+Iteration 48, Best Fitness: 0.238180
+Iteration 49, Best Fitness: 0.238180
+Iteration 50, Best Fitness: 0.238180
+Iteration 51, Best Fitness: 0.238180
+Iteration 52, Best Fitness: 0.236819
+Iteration 53, Best Fitness: 0.223898
+Iteration 54, Best Fitness: 0.215493
+Iteration 55, Best Fitness: 0.215493
+Iteration 56, Best Fitness: 0.215493
+Iteration 57, Best Fitness: 0.202426
+Iteration 58, Best Fitness: 0.202426
+Iteration 59, Best Fitness: 0.185148
+Iteration 60, Best Fitness: 0.185148
+Iteration 61, Best Fitness: 0.185148
+Iteration 62, Best Fitness: 0.183856
+Iteration 63, Best Fitness: 0.183335
+Iteration 64, Best Fitness: 0.173777
+Iteration 65, Best Fitness: 0.171443
+Iteration 66, Best Fitness: 0.171443
+Iteration 67, Best Fitness: 0.168565
+Iteration 68, Best Fitness: 0.167000
+Iteration 69, Best Fitness: 0.164066
+Iteration 70, Best Fitness: 0.163702
+Iteration 71, Best Fitness: 0.159898
+Iteration 72, Best Fitness: 0.158804
+Iteration 73, Best Fitness: 0.157597
+Iteration 74, Best Fitness: 0.155534
+Iteration 75, Best Fitness: 0.151937
+Iteration 76, Best Fitness: 0.151008
+Iteration 77, Best Fitness: 0.147354
+Iteration 78, Best Fitness: 0.146372
+Iteration 79, Best Fitness: 0.145886
+Iteration 80, Best Fitness: 0.143236
+Iteration 81, Best Fitness: 0.139894
+Iteration 82, Best Fitness: 0.139894
+Iteration 83, Best Fitness: 0.138112
+Iteration 84, Best Fitness: 0.137325
+Iteration 85, Best Fitness: 0.136750
+Iteration 86, Best Fitness: 0.135440
+Iteration 87, Best Fitness: 0.134289
+Iteration 88, Best Fitness: 0.133318
+Iteration 89, Best Fitness: 0.132606
+Iteration 90, Best Fitness: 0.132606
+Iteration 91, Best Fitness: 0.132036
+Iteration 92, Best Fitness: 0.131293
+Iteration 93, Best Fitness: 0.131293
+Iteration 94, Best Fitness: 0.130900
+Iteration 95, Best Fitness: 0.130667
+Iteration 96, Best Fitness: 0.130415
+Iteration 97, Best Fitness: 0.130092
+Iteration 98, Best Fitness: 0.129952
+Iteration 99, Best Fitness: 0.129820
+
+Final Best Fitness: 0.12982011614819125
+Best Position Found:
+[-1.00243139 -0.86236545 -1.00939585  0.03637355 -1.00780907 -0.8421432
+ -1.01500843  0.13811565 -0.99669027 -1.00165873  0.02390361  0.01007495
+ -1.01156836  0.13344897 -0.99621547  0.02364109  0.00873688 -0.98909164
+ -0.03288482 -1.01112895 -0.98496409 -1.01558889 -1.01286127  0.1467873
+ -1.00922457 -1.02890249 -0.72419631 -1.07325977 -0.9909393  -0.03922843
+ -0.99598325  0.22885204 -0.99103552 -0.97503967  0.07485057 -0.98754548
+ -0.01717007 -1.02456343 -0.98657436  0.03236596]

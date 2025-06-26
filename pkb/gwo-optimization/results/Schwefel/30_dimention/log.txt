@@ -1,0 +1,110 @@
+Optimization Log
+Iteration 0, Best Fitness: -3200.148916
+Iteration 1, Best Fitness: -3200.148916
+Iteration 2, Best Fitness: -3200.148916
+Iteration 3, Best Fitness: -3200.148916
+Iteration 4, Best Fitness: -3470.610014
+Iteration 5, Best Fitness: -3470.610014
+Iteration 6, Best Fitness: -3470.610014
+Iteration 7, Best Fitness: -3470.610014
+Iteration 8, Best Fitness: -3470.610014
+Iteration 9, Best Fitness: -3470.610014
+Iteration 10, Best Fitness: -3470.610014
+Iteration 11, Best Fitness: -3470.610014
+Iteration 12, Best Fitness: -3470.610014
+Iteration 13, Best Fitness: -3470.610014
+Iteration 14, Best Fitness: -3470.610014
+Iteration 15, Best Fitness: -3470.610014
+Iteration 16, Best Fitness: -3470.610014
+Iteration 17, Best Fitness: -3470.610014
+Iteration 18, Best Fitness: -3470.610014
+Iteration 19, Best Fitness: -3470.610014
+Iteration 20, Best Fitness: -3470.610014
+Iteration 21, Best Fitness: -3470.610014
+Iteration 22, Best Fitness: -3470.610014
+Iteration 23, Best Fitness: -3470.610014
+Iteration 24, Best Fitness: -3470.610014
+Iteration 25, Best Fitness: -3470.610014
+Iteration 26, Best Fitness: -3470.610014
+Iteration 27, Best Fitness: -3470.610014
+Iteration 28, Best Fitness: -3470.610014
+Iteration 29, Best Fitness: -3470.610014
+Iteration 30, Best Fitness: -3470.610014
+Iteration 31, Best Fitness: -3470.610014
+Iteration 32, Best Fitness: -3470.610014
+Iteration 33, Best Fitness: -3470.610014
+Iteration 34, Best Fitness: -3470.610014
+Iteration 35, Best Fitness: -3470.610014
+Iteration 36, Best Fitness: -3470.610014
+Iteration 37, Best Fitness: -3470.610014
+Iteration 38, Best Fitness: -3470.610014
+Iteration 39, Best Fitness: -3470.610014
+Iteration 40, Best Fitness: -3470.610014
+Iteration 41, Best Fitness: -3470.610014
+Iteration 42, Best Fitness: -3470.610014
+Iteration 43, Best Fitness: -3470.610014
+Iteration 44, Best Fitness: -3470.610014
+Iteration 45, Best Fitness: -3470.610014
+Iteration 46, Best Fitness: -3470.610014
+Iteration 47, Best Fitness: -3470.610014
+Iteration 48, Best Fitness: -3470.610014
+Iteration 49, Best Fitness: -3470.610014
+Iteration 50, Best Fitness: -3470.610014
+Iteration 51, Best Fitness: -3470.610014
+Iteration 52, Best Fitness: -3809.813608
+Iteration 53, Best Fitness: -3809.813608
+Iteration 54, Best Fitness: -3809.813608
+Iteration 55, Best Fitness: -3809.813608
+Iteration 56, Best Fitness: -3809.813608
+Iteration 57, Best Fitness: -3809.813608
+Iteration 58, Best Fitness: -3809.813608
+Iteration 59, Best Fitness: -3814.157810
+Iteration 60, Best Fitness: -3814.157810
+Iteration 61, Best Fitness: -3814.157810
+Iteration 62, Best Fitness: -4094.072227
+Iteration 63, Best Fitness: -4094.072227
+Iteration 64, Best Fitness: -4094.072227
+Iteration 65, Best Fitness: -4094.072227
+Iteration 66, Best Fitness: -4094.072227
+Iteration 67, Best Fitness: -4432.203758
+Iteration 68, Best Fitness: -4793.587220
+Iteration 69, Best Fitness: -5120.747801
+Iteration 70, Best Fitness: -5120.747801
+Iteration 71, Best Fitness: -5120.747801
+Iteration 72, Best Fitness: -5120.747801
+Iteration 73, Best Fitness: -5120.747801
+Iteration 74, Best Fitness: -5120.747801
+Iteration 75, Best Fitness: -5317.997466
+Iteration 76, Best Fitness: -5317.997466
+Iteration 77, Best Fitness: -5486.118307
+Iteration 78, Best Fitness: -5486.118307
+Iteration 79, Best Fitness: -5486.118307
+Iteration 80, Best Fitness: -5495.224672
+Iteration 81, Best Fitness: -5531.708949
+Iteration 82, Best Fitness: -5531.708949
+Iteration 83, Best Fitness: -5746.870798
+Iteration 84, Best Fitness: -5746.870798
+Iteration 85, Best Fitness: -5746.870798
+Iteration 86, Best Fitness: -5746.870798
+Iteration 87, Best Fitness: -5909.591506
+Iteration 88, Best Fitness: -5909.591506
+Iteration 89, Best Fitness: -5911.987017
+Iteration 90, Best Fitness: -5973.811305
+Iteration 91, Best Fitness: -6034.832246
+Iteration 92, Best Fitness: -6176.332879
+Iteration 93, Best Fitness: -6182.970593
+Iteration 94, Best Fitness: -6259.025437
+Iteration 95, Best Fitness: -6303.242059
+Iteration 96, Best Fitness: -6325.567014
+Iteration 97, Best Fitness: -6373.982178
+Iteration 98, Best Fitness: -6394.627468
+Iteration 99, Best Fitness: -6413.334622
+
+Final Best Fitness: -6413.334621735157
+Best Position Found:
+[  49.73127087  -39.13762498  201.19400498 -299.85943938   13.3676828
+  -44.24311908 -295.7911954    35.61851106   67.11374889  174.8273737
+ -299.63299145  423.68846935  423.12432172  419.82654135  204.26053464
+ -118.13918545  421.2387314   421.97647509   60.42395366 -299.58734472
+   53.49039705  204.82082085  -15.66870033  426.72362072  417.69155462
+ -302.25655621 -122.67535663  418.93729654  -94.9780977   428.45740966]
