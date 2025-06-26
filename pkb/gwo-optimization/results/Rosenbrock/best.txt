@@ -1,3 +1,3 @@
 Optimization Log
-Best config for Rosenbrock: dimentions=10
-Best fitness for Rosenbrock: 8.518446943926664
+Best config for Rosenbrock: dimension=10
+Best fitness for Rosenbrock: 4.628575061782879

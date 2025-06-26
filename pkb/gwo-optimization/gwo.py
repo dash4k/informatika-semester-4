@@ -22,18 +22,13 @@ class GWO:
         self.lb = lb
         self.ub = ub
 
-    def fit(self, logger=None):
-        positions = np.random.uniform(self.lb, self.ub, (self.search_agents, self.dim))
-
-        alpha, beta, delta = np.zeros(self.dim), np.zeros(self.dim), np.zeros(self.dim)
-        alpha_score, beta_score, delta_score = float('inf'), float('inf'), float('inf')
-
     def fit(self, logger=None, spinner=None):
         positions = np.random.uniform(self.lb, self.ub, (self.search_agents, self.dim))
 
         alpha, beta, delta = np.zeros(self.dim), np.zeros(self.dim), np.zeros(self.dim)
         alpha_score, beta_score, delta_score = float('inf'), float('inf'), float('inf')
         convergence_curve = []
+        position_history = []
 
         for t in range(self.max_iter):
             for i in range(self.search_agents):
@@ -76,6 +71,8 @@ class GWO:
                     positions[i][j] = (x1 + x2 + x3) / 3
 
             convergence_curve.append(alpha_score)
+            position_history.append(positions.copy())
+
 
             if logger:
                 logger.log(f"Iteration {t}, Best Fitness: {alpha_score:.6f}")
@@ -87,4 +84,4 @@ class GWO:
             logger.log(f"Best Position Found:\n{alpha}")
         
         print()
-        return alpha_score, alpha, convergence_curve
+        return alpha_score, alpha, convergence_curve, position_history

@@ -1,3 +1,3 @@
 Optimization Log
-Best config for Quartic with Noise: dimentions=20
-Best fitness for Quartic with Noise: 0.012995860489294637
+Best config for Quartic with Noise: dimension=10
+Best fitness for Quartic with Noise: 0.012970181534327684

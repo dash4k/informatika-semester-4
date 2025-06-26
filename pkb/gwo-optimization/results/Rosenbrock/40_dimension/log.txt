@@ -1,0 +1,111 @@
+Optimization Log
+Iteration 0, Best Fitness: 292651010.216739
+Iteration 1, Best Fitness: 163742499.065499
+Iteration 2, Best Fitness: 66535830.855065
+Iteration 3, Best Fitness: 41122951.109894
+Iteration 4, Best Fitness: 41122951.109894
+Iteration 5, Best Fitness: 18037301.315189
+Iteration 6, Best Fitness: 15647953.614420
+Iteration 7, Best Fitness: 8852174.809728
+Iteration 8, Best Fitness: 3794189.258272
+Iteration 9, Best Fitness: 2735805.118700
+Iteration 10, Best Fitness: 1969911.130366
+Iteration 11, Best Fitness: 1294295.048448
+Iteration 12, Best Fitness: 659494.606962
+Iteration 13, Best Fitness: 494195.237619
+Iteration 14, Best Fitness: 226391.329871
+Iteration 15, Best Fitness: 199925.225242
+Iteration 16, Best Fitness: 119023.092938
+Iteration 17, Best Fitness: 69364.756872
+Iteration 18, Best Fitness: 35970.506348
+Iteration 19, Best Fitness: 26105.592706
+Iteration 20, Best Fitness: 11865.894508
+Iteration 21, Best Fitness: 6495.653565
+Iteration 22, Best Fitness: 4300.645084
+Iteration 23, Best Fitness: 1829.750084
+Iteration 24, Best Fitness: 1656.652363
+Iteration 25, Best Fitness: 1061.460397
+Iteration 26, Best Fitness: 744.471316
+Iteration 27, Best Fitness: 536.545087
+Iteration 28, Best Fitness: 450.292698
+Iteration 29, Best Fitness: 363.076945
+Iteration 30, Best Fitness: 287.458647
+Iteration 31, Best Fitness: 232.642716
+Iteration 32, Best Fitness: 200.418193
+Iteration 33, Best Fitness: 178.773217
+Iteration 34, Best Fitness: 155.453546
+Iteration 35, Best Fitness: 140.732280
+Iteration 36, Best Fitness: 118.345044
+Iteration 37, Best Fitness: 108.277883
+Iteration 38, Best Fitness: 87.203436
+Iteration 39, Best Fitness: 82.020963
+Iteration 40, Best Fitness: 70.124418
+Iteration 41, Best Fitness: 63.784942
+Iteration 42, Best Fitness: 61.099556
+Iteration 43, Best Fitness: 56.976689
+Iteration 44, Best Fitness: 53.468853
+Iteration 45, Best Fitness: 50.668765
+Iteration 46, Best Fitness: 49.488956
+Iteration 47, Best Fitness: 47.766862
+Iteration 48, Best Fitness: 46.235361
+Iteration 49, Best Fitness: 45.516304
+Iteration 50, Best Fitness: 44.507893
+Iteration 51, Best Fitness: 43.592668
+Iteration 52, Best Fitness: 43.199079
+Iteration 53, Best Fitness: 42.557771
+Iteration 54, Best Fitness: 42.068187
+Iteration 55, Best Fitness: 41.555458
+Iteration 56, Best Fitness: 41.149806
+Iteration 57, Best Fitness: 40.937827
+Iteration 58, Best Fitness: 40.748035
+Iteration 59, Best Fitness: 40.456330
+Iteration 60, Best Fitness: 40.371067
+Iteration 61, Best Fitness: 40.231201
+Iteration 62, Best Fitness: 39.976498
+Iteration 63, Best Fitness: 39.935615
+Iteration 64, Best Fitness: 39.798682
+Iteration 65, Best Fitness: 39.724671
+Iteration 66, Best Fitness: 39.637639
+Iteration 67, Best Fitness: 39.576209
+Iteration 68, Best Fitness: 39.462091
+Iteration 69, Best Fitness: 39.397709
+Iteration 70, Best Fitness: 39.357926
+Iteration 71, Best Fitness: 39.302035
+Iteration 72, Best Fitness: 39.261611
+Iteration 73, Best Fitness: 39.227488
+Iteration 74, Best Fitness: 39.210717
+Iteration 75, Best Fitness: 39.181008
+Iteration 76, Best Fitness: 39.168616
+Iteration 77, Best Fitness: 39.139446
+Iteration 78, Best Fitness: 39.125745
+Iteration 79, Best Fitness: 39.113032
+Iteration 80, Best Fitness: 39.100676
+Iteration 81, Best Fitness: 39.086265
+Iteration 82, Best Fitness: 39.070786
+Iteration 83, Best Fitness: 39.059676
+Iteration 84, Best Fitness: 39.048425
+Iteration 85, Best Fitness: 39.040316
+Iteration 86, Best Fitness: 39.029796
+Iteration 87, Best Fitness: 39.024926
+Iteration 88, Best Fitness: 39.017938
+Iteration 89, Best Fitness: 39.011836
+Iteration 90, Best Fitness: 39.003949
+Iteration 91, Best Fitness: 39.000319
+Iteration 92, Best Fitness: 38.997236
+Iteration 93, Best Fitness: 38.992167
+Iteration 94, Best Fitness: 38.989758
+Iteration 95, Best Fitness: 38.987551
+Iteration 96, Best Fitness: 38.985586
+Iteration 97, Best Fitness: 38.983900
+Iteration 98, Best Fitness: 38.982870
+Iteration 99, Best Fitness: 38.981809
+
+Final Best Fitness: 38.98180866368469
+Best Position Found:
+[-0.01029796  0.0118718  -0.00195404 -0.0044977   0.01187022  0.01178644
+ -0.00465611 -0.0033037   0.01196374 -0.00495282  0.00883441 -0.00442028
+ -0.004006    0.01332751  0.01262076  0.01205788  0.01143838  0.01247772
+ -0.00130188 -0.00569565 -0.00322931  0.01238517  0.01250852  0.00088218
+  0.01089259  0.01044998 -0.00334861 -0.00263401  0.01035435 -0.00425125
+ -0.00227306 -0.00441514  0.01220212  0.01037011  0.01262511  0.010313
+ -0.00358759 -0.00368635  0.01277206  0.00776785]
