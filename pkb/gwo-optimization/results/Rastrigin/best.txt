@@ -1,3 +1,3 @@
 Optimization Log
 Best config for Rastrigin: dimension=10
-Best fitness for Rastrigin: 2.3512314864835844
+Best fitness for Rastrigin: 6.989500435378673

@@ -20,9 +20,8 @@ for fname, f in functions.items():
         os.makedirs(result_dir, exist_ok=True)
 
         logger = Logger(f"{result_dir}/log.txt")
-        search_agents = max(20, min(100, dimension * 2))
         
-        gwo = GWO(func=f.func, search_agents=search_agents, max_iter=100, dim=dimension, lb=f.lower_bound, ub=f.upper_bound)
+        gwo = GWO(func=f.func, search_agents=30, max_iter=100, dim=dimension, lb=f.lower_bound, ub=f.upper_bound)
         spinner = Spinner(f"{fname} ({dimension} dimension)")
         fitness, _, curve, position_history = gwo.fit(logger=logger, spinner=spinner)
 

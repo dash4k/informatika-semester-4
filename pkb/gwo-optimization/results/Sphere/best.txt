@@ -1,3 +1,3 @@
 Optimization Log
 Best config for Sphere: dimension=10
-Best fitness for Sphere: 1.7367789544139528e-06
+Best fitness for Sphere: 2.4258812817900662e-09
