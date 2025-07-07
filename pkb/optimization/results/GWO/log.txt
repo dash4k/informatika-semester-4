@@ -1,0 +1,13 @@
+Optimization Log
+Iteration 1, Best Fitness: 0.500000
+Iteration 2, Best Fitness: 0.500000
+Iteration 3, Best Fitness: 0.032080
+Iteration 4, Best Fitness: 0.000602
+Iteration 5, Best Fitness: 0.000010
+
+Final Best Fitness: 9.743499663559637e-06
+Best Position Found:
+[ 0.00245001 -0.00193416]
+Best config for Sphere: dimension=2
+Best fitness for Sphere: 9.743499663559637e-06
+Best position: [ 0.00245001 -0.00193416]
