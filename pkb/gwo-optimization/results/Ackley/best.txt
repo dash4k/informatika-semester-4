@@ -1,3 +1,0 @@
-Optimization Log
-Best config for Ackley: dimension=10
-Best fitness for Ackley: 6.173532142428328e-05

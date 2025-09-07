@@ -1,3 +1,0 @@
-Optimization Log
-Best config for Step: dimension=10
-Best fitness for Step: 7.685274542722757e-05
