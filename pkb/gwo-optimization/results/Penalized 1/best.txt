@@ -1,3 +1,0 @@
-Optimization Log
-Best config for Penalized 1: dimension=10
-Best fitness for Penalized 1: 0.061622391104105584
