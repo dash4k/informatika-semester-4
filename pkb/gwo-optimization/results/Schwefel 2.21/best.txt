@@ -1,3 +1,0 @@
-Optimization Log
-Best config for Schwefel 2.21: dimension=10
-Best fitness for Schwefel 2.21: 0.009294467339531542
